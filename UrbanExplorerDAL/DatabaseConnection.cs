@@ -1,4 +1,4 @@
-﻿using MySqlConnector;
+﻿using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +9,16 @@ namespace UrbanExplorerDAL
 {
     internal static class DatabaseConnection
     {
-        public static MySqlConnection CreateConnection()
+        public static SqlConnection CreateConnection()
         {
-            MySqlConnection connection = new MySqlConnection(GetConnectionString());
+            SqlConnection connection = new SqlConnection(GetConnectionString());
 
             return connection;
         }
 
         public static string GetConnectionString()
         {
-            return "";
+            return "Data Source=LAPTOP-MOO8TEUR\\SPOTIFY2;Initial Catalog=UrbanExplorer;Integrated Security=True;TrustServerCertificate=True";
         }
     }
 }

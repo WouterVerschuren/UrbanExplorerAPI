@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UrbanExplorerDAL;
+using UrbanExplorerDTO;
+using UrbanExplorerLogic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -6,7 +9,7 @@ namespace UrbanExplorerAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class ExplorerController : ControllerBase
     {
         // GET: api/<UserController>
         [HttpGet]
@@ -24,8 +27,14 @@ namespace UrbanExplorerAPI.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(string name, string email, string password)
         {
+            ExplorerService explorerService = new ExplorerService(new ExplorerDataService());
+            ExplorerDTO explorer = new ExplorerDTO();
+            explorer.Name = name;
+            explorer.Email = email;
+            explorer.Password = password;
+            explorerService.Post(explorer);
         }
 
         // PUT api/<UserController>/5
