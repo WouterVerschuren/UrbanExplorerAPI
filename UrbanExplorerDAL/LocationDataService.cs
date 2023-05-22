@@ -13,10 +13,10 @@ namespace UrbanExplorerDAL
     public class LocationDataService : IlocationDataService 
     {
 
-        public LocationDTO GetLocationById(int id)
-        {
-            return 
-        }
+        //public LocationDTO GetLocationById(int id)
+        //{
+        //    return 
+        //}
         //public LocationDTO GetLocationById(int id)
         //{
         //    LocationDTO location = new LocationDTO();
@@ -108,6 +108,11 @@ namespace UrbanExplorerDAL
                 }
             }
             return locations;
+        }
+
+        public LocationDTO GetLocationById(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Post(LocationDTO locationDTO)
