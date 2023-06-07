@@ -17,9 +17,18 @@ namespace UrbanExplorerLogic
             this._Dataservice = ilocation;
         }
 
-        public void Post(LocationDTO location)
+        public void CreateLocation(LocationDTO location)
         {
-            _Dataservice.Post(location);
+            _Dataservice.CreateLocation(location);
+        }
+        public void DeleteLocation(LocationDTO location)
+        {
+            _Dataservice.DeleteLocation(location);
+        }
+
+        public void UpdateLocation(LocationDTO location)
+        {
+            _Dataservice.UpdateLocation(location);
         }
 
         public LocationDTO GetLocationById(int id) 
@@ -31,5 +40,11 @@ namespace UrbanExplorerLogic
         {
             return _Dataservice.GetAllLocations();
         }
+        public void Post(LocationDTO location)
+        {
+            _Dataservice.CreateLocation(location);
+        }
+
+
     }
 }

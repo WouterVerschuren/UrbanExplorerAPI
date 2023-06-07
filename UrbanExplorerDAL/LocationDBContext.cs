@@ -4,16 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using UrbanExplorerDTO;
 
-namespace UrbanExplorerDAL
+public class LocationDBContext : DbContext
 {
-    //public class LocationDbContext : DbContext
-    //{
-    //    public DbSet<Location> Locations { get; set; }
+    public DbSet<LocationDTO>? Locations { get; set; }
 
-    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //    {
-    //        optionsBuilder.UseSqlServer("Data Source=LAPTOP-MOO8TEUR\\SPOTIFY2;Initial Catalog=UrbanExplorer;Integrated Security=True;TrustServerCertificate=True");
-    //    }
-    //}
+    public LocationDBContext() 
+    { 
+    }
+
+    public LocationDBContext(DbContextOptions<LocationDBContext> options) : base(options)
+    {
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Data Source=LAPTOP-MOO8TEUR\\SPOTIFY2;Initial Catalog=UrbanExplorer;Integrated Security=True;TrustServerCertificate=True"); // Replace with your actual database connection string
+    }
+
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<LocationDTO>()
+
+            .Property(e => e.Checked)
+            .HasConversion<byte>();
+    }
+
 }

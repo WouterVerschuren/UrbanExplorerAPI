@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace UrbanExplorerDTO
 {
@@ -14,6 +17,8 @@ namespace UrbanExplorerDTO
         public string? Infomation { get; set; }
         public int Rating { get; set; }
         public bool Checked { get; set; }
-        
+
+
+
     }
 }

@@ -5,6 +5,9 @@ using UrbanExplorerDTO;
 using UrbanExplorerLogic;
 using System.Text.Json;
 using System.Web.Http.Cors;
+using System.Collections.Generic;
+using UrbanExplorerInterfaces;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,12 +18,14 @@ namespace UrbanExplorerAPI.Controllers
     [ApiController]
     public class LocationController : ControllerBase
     {
+
+        
         // GET: api/<LocationController>
         [HttpGet]
         public JsonResult GetAllLocations()
         {
             List<Location> locations = new List<Location>();
-            LocationService locationService = new LocationService(new LocationDataService());
+            LocationService locationService = new LocationService(new LocationDataService(new LocationDBContext()));
             List<LocationDTO> locationsDTO = locationService.GetAllLocations();
 
             foreach (LocationDTO locationDTO in locationsDTO)
@@ -47,7 +52,7 @@ namespace UrbanExplorerAPI.Controllers
         [HttpGet("{id}")]
         public JsonResult Get(int id)
         {
-            LocationService locationService = new LocationService(new LocationDataService());
+            LocationService locationService = new LocationService(new LocationDataService(new LocationDBContext()));
             LocationDTO locationDTO = locationService.GetLocationById(id);
             Location location = new Location();
 
@@ -64,8 +69,16 @@ namespace UrbanExplorerAPI.Controllers
 
         // POST api/<LocationController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Location location)
         {
+            LocationService locationService = new LocationService(new LocationDataService(new LocationDBContext()));
+            LocationDTO locationDTO = new LocationDTO();
+            locationDTO.Longtitude = location.Longtitude;
+            locationDTO.Latitude = location.Latitude;
+            locationDTO.Rating = location.Rating;
+            locationDTO.Checked = location.Checked;
+            locationDTO.Infomation = location.Infomation;
+            locationService.Post(locationDTO);
         }
 
         // PUT api/<LocationController>/5
