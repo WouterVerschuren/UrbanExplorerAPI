@@ -14,7 +14,7 @@
 
 
 // Set up your database connection string
-var connectionString = "Data Source=LAPTOP-MOO8TEUR\\SPOTIFY2;Initial Catalog=UrbanExplorer;Integrated Security=True;TrustServerCertificate=True";
+var connectionString = "Server=tcp:urbanexplorerserver.database.windows.net,1433;Initial Catalog=urbanexplorerdb;Persist Security Info=False;User ID=UrbanExplorer;Password=QRHHpe4y;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
 // Add services
 builder.Services.AddDbContext<LocationDBContext>(options =>
