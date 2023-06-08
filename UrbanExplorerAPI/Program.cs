@@ -22,11 +22,13 @@ builder.Services.AddDbContext<LocationDBContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddCors(p => p.AddPolicy("corspolicy", build =>
-    {
-        build.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
-    }));
+{
+    build.WithOrigins("http://localhost:3000", "https://urbanexplorerfrontend.vercel.app")
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+}));
 
-    var app = builder.Build();
+var app = builder.Build();
 
 
         app.UseSwagger();
