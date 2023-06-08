@@ -13,6 +13,7 @@
     builder.Services.AddSwaggerGen();
 
 
+
 // Set up your database connection string
 var connectionString = "Server=tcp:urbanexplorerserver.database.windows.net,1433;Initial Catalog=urbanexplorerdb;Persist Security Info=False;User ID=UrbanExplorer;Password=QRHHpe4y;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
