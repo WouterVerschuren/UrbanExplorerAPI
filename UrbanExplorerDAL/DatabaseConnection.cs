@@ -18,7 +18,7 @@ namespace UrbanExplorerDAL
 
         public static string GetConnectionString()
         {
-            return "Data Source=LAPTOP-MOO8TEUR\\SPOTIFY2;Initial Catalog=UrbanExplorer;Integrated Security=True;TrustServerCertificate=True";
+            return "Server=tcp:urbanexplorerserver.database.windows.net,1433;Initial Catalog=urbanexplorerdb;Persist Security Info=False;User ID=UrbanExplorer;Password=QRHHpe4y;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         }
     }
 }

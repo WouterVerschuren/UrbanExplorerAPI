@@ -37,7 +37,7 @@ namespace UrbanExplorerAPI.Controllers
                 location.Latitude = locationDTO.Latitude;
                 location.Rating = locationDTO.Rating;
                 location.Checked = locationDTO.Checked;
-                location.Infomation = locationDTO.Infomation;
+                location.Information = locationDTO.Information;
 
                 locations.Add(location);
             }
@@ -61,7 +61,7 @@ namespace UrbanExplorerAPI.Controllers
             location.Latitude = locationDTO.Latitude;
             location.Rating = locationDTO.Rating;
             location.Checked = locationDTO.Checked;
-            location.Infomation = locationDTO.Infomation;
+            location.Information = locationDTO.Information;
 
 
             return new JsonResult(location);
@@ -77,7 +77,7 @@ namespace UrbanExplorerAPI.Controllers
             locationDTO.Latitude = location.Latitude;
             locationDTO.Rating = location.Rating;
             locationDTO.Checked = location.Checked;
-            locationDTO.Infomation = location.Infomation;
+            locationDTO.Information = location.Information;
             locationService.Post(locationDTO);
         }
 

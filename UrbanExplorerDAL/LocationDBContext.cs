@@ -20,7 +20,7 @@ public class LocationDBContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=LAPTOP-MOO8TEUR\\SPOTIFY2;Initial Catalog=UrbanExplorer;Integrated Security=True;TrustServerCertificate=True"); // Replace with your actual database connection string
+        optionsBuilder.UseSqlServer("Server=tcp:urbanexplorerserver.database.windows.net,1433;Initial Catalog=urbanexplorerdb;Persist Security Info=False;User ID=UrbanExplorer;Password=QRHHpe4y;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"); // Replace with your actual database connection string
     }
 
 
