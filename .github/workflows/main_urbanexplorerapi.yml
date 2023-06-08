@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'UrbanExplorerAPI'
+          app-name: 'UrbanExplorerAPI2'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5F29D584CBD94C78B324CB740911832A }}
           package: .
