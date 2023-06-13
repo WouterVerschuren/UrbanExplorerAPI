@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy ASP.Net Core app to Azure Web App - UrbanExplorerAPI
 
 on:
@@ -55,3 +52,19 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5F29D584CBD94C78B324CB740911832A }}
           package: .
+
+  ci:
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: .net-app
+
+      - name: Install dotnet dependencies
+        run: dotnet restore
+
+      - name: Build and run unit tests
+        run: |
+          dotnet test --configuration Release --no-build --verbosity normal
