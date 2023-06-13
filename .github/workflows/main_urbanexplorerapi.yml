@@ -2,53 +2,50 @@ name: Build and deploy ASP.Net Core app to Azure Web App - UrbanExplorerAPI
 
 on:
   push:
-    branches:
-      
-main
-
-workflow_dispatch:
+    branches: 
+    
+    - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      
-uses: actions/checkout@v2
-
-      
-name: Set up .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
+       - uses: actions/checkout@v2      
+       - ame: Set up .NET Core
+  uses: actions/setup-dotnet@v1
+  with:
         dotnet-version: '7.x'
         include-prerelease: true
 
-      
-name: Build with dotnet
-      run: dotnet build --configuration Release
+
+
+- name: Build with dotnet
+  run: dotnet build --configuration Release
 
       
-name: Run Tests
-      run: dotnet test --configuration Release --no-restore --verbosity normal
+- name: Run Tests
+  run: dotnet test --configuration Release --no-restore --verbosity normal
 
       
-name: Install dotnet dependencies
-      run: dotnet restore
+- name: Install dotnet dependencies
+  run: dotnet restore
 
       
-name: Build and run unit tests
-      run: |
+- name: Build and run unit tests
+  run: |
         dotnet test --configuration Release --no-build --verbosity normal
 
 
       
-name: dotnet publish
-      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+- name: dotnet publish
+  run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       
-name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v2
-      with:
+- name: Upload artifact for deployment job
+  uses: actions/upload-artifact@v2
+  with:
         name: .net-app
         path: ${{env.DOTNET_ROOT}}/myapp
 
@@ -61,16 +58,16 @@ name: Upload artifact for deployment job
 
     steps:
       
-name: Download artifact from build job
-      uses: actions/download-artifact@v2
-      with:
+- name: Download artifact from build job
+  uses: actions/download-artifact@v2
+  with:
         name: .net-app
 
       
-name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
+- name: Deploy to Azure Web App
+  id: deploy-to-webapp
+  uses: azure/webapps-deploy@v2
+  with:
         app-name: 'UrbanExplorerAPI'
         slot-name: 'Production'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5F29D584CBD94C78B324CB740911832A }}
