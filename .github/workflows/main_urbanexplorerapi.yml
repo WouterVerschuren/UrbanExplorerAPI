@@ -69,4 +69,4 @@ jobs:
       - name: Build and run unit tests
         run: |
           dotnet test --configuration Release --no-build --verbosity normal
-        working-directory: ${{env.DOTNET_ROOT}}/UrbanExplorerWebAPIUnitTest\UrbanExplorerWebAPIUnitTest.csproj
+        working-directory: ${{env.DOTNET_ROOT}}/UrbanExplorerWebAPIUnitTest
