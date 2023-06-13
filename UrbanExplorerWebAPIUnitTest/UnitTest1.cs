@@ -18,7 +18,7 @@ namespace UrbanExplorerWebAPIUnitTest
             var expectedId = 1;
             var expectedLongitude = 436;
             var expectedLatitude = 34634;
-            var expectedInformation = "ey";
+            var expectedInformation = "eyery";
             var expectedRating = 3;
             var expectedChecked = false;
 
