@@ -17,6 +17,5 @@ namespace UrbanExplorerDTO
         public string? Information { get; set; }
         public int Rating { get; set; }
         public bool Checked { get; set; }
-
     }
 }

@@ -45,7 +45,7 @@ namespace UrbanExplorerDAL
 
         public LocationDTO GetLocationById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Locations.Find(id);
         }
 
         public void UpdateLocation(LocationDTO locationDTO)

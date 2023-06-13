@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanExplorerAPI", "UrbanExplorerAPI\UrbanExplorerAPI.csproj", "{172629B1-7B0B-4242-8F1B-B99A8F936DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrbanExplorerAPI", "UrbanExplorerAPI\UrbanExplorerAPI.csproj", "{172629B1-7B0B-4242-8F1B-B99A8F936DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanExplorerDAL", "UrbanExplorerDAL\UrbanExplorerDAL.csproj", "{C737A359-1669-4BCA-A959-202916B7ED65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrbanExplorerDAL", "UrbanExplorerDAL\UrbanExplorerDAL.csproj", "{C737A359-1669-4BCA-A959-202916B7ED65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanExplorerDTO", "UrbanExplorerDTO\UrbanExplorerDTO.csproj", "{5D98E044-EFE4-4169-9EE4-38AB967A19C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrbanExplorerDTO", "UrbanExplorerDTO\UrbanExplorerDTO.csproj", "{5D98E044-EFE4-4169-9EE4-38AB967A19C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanExplorerInterfaces", "UrbanExplorerInterfaces\UrbanExplorerInterfaces.csproj", "{3EF7FD0A-8456-4B24-A068-64159E125308}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrbanExplorerInterfaces", "UrbanExplorerInterfaces\UrbanExplorerInterfaces.csproj", "{3EF7FD0A-8456-4B24-A068-64159E125308}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanExplorerLogic", "UrbanExplorerLogic\UrbanExplorerLogic.csproj", "{E6ED3AF1-52CD-4F6D-8542-8E13EBC0686E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrbanExplorerLogic", "UrbanExplorerLogic\UrbanExplorerLogic.csproj", "{E6ED3AF1-52CD-4F6D-8542-8E13EBC0686E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanExplorerWebAPIUnitTest", "UrbanExplorerWebAPIUnitTest\UrbanExplorerWebAPIUnitTest.csproj", "{4E64FC59-77CB-4BE6-8E83-3B9461D9930E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E6ED3AF1-52CD-4F6D-8542-8E13EBC0686E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6ED3AF1-52CD-4F6D-8542-8E13EBC0686E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6ED3AF1-52CD-4F6D-8542-8E13EBC0686E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E64FC59-77CB-4BE6-8E83-3B9461D9930E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E64FC59-77CB-4BE6-8E83-3B9461D9930E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E64FC59-77CB-4BE6-8E83-3B9461D9930E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E64FC59-77CB-4BE6-8E83-3B9461D9930E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
