@@ -64,7 +64,9 @@ jobs:
 
       - name: Install dotnet dependencies
         run: dotnet restore
+        working-directory: C:\Users\finwo\source\repos\UrbanExplorerAPI\UrbanExplorerWebAPIUnitTest\UrbanExplorerWebAPIUnitTest.csproj
 
       - name: Build and run unit tests
         run: |
           dotnet test --configuration Release --no-build --verbosity normal
+        working-directory: C:\Users\finwo\source\repos\UrbanExplorerAPI\UrbanExplorerWebAPIUnitTest\UrbanExplorerWebAPIUnitTest.csproj
