@@ -83,14 +83,30 @@ namespace UrbanExplorerAPI.Controllers
 
         // PUT api/<LocationController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put([FromBody] Location location)
         {
+            LocationService locationService = new LocationService(new LocationDataService(new LocationDBContext()));
+            LocationDTO locationDTO = new LocationDTO();
+            locationDTO.Longtitude = location.Longtitude;
+            locationDTO.Latitude = location.Latitude;
+            locationDTO.Rating = location.Rating;
+            locationDTO.Checked = location.Checked;
+            locationDTO.Information = location.Information;
+            locationService.UpdateLocation(locationDTO);
         }
 
         // DELETE api/<LocationController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete([FromBody] Location location)
         {
+            LocationService locationService = new LocationService(new LocationDataService(new LocationDBContext()));
+            LocationDTO locationDTO = new LocationDTO();
+            locationDTO.Longtitude = location.Longtitude;
+            locationDTO.Latitude = location.Latitude;
+            locationDTO.Rating = location.Rating;
+            locationDTO.Checked = location.Checked;
+            locationDTO.Information = location.Information;
+            locationService.DeleteLocation(locationDTO);
         }
     }
 }

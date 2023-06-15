@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UrbanExplorerAPI\UrbanExplorerAPI.csproj" />
+    <ProjectReference Include="..\UrbanExplorerDAL\UrbanExplorerDAL.csproj" />
     <ProjectReference Include="..\UrbanExplorerLogic\UrbanExplorerLogic.csproj" />
   </ItemGroup>
 

@@ -11,7 +11,7 @@ namespace UrbanExplorerInterfaces
     {
         public void CreateLocation(LocationDTO locationDTO);
         public void UpdateLocation(LocationDTO locationDTO);
-        public void DeleteLocation(LocationDTO locationDTO);
+        public void DeleteLocation(LocationDTO locationDTO); 
         public LocationDTO GetLocationById(int id);
         public List<LocationDTO> GetAllLocations();
     }

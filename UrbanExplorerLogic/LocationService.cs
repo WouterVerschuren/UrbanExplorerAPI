@@ -21,9 +21,9 @@ namespace UrbanExplorerLogic
         {
             _Dataservice.CreateLocation(location);
         }
-        public void DeleteLocation(LocationDTO location)
+        public void DeleteLocation(LocationDTO idlocationDTO)
         {
-            _Dataservice.DeleteLocation(location);
+            _Dataservice.DeleteLocation(idlocationDTO);
         }
 
         public void UpdateLocation(LocationDTO location)

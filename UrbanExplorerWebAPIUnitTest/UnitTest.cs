@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Routing;
+using System.Data;
+using System.Data.SqlClient;
 using UrbanExplorerDAL;
 using UrbanExplorerDTO;
 using UrbanExplorerInterfaces;
@@ -6,8 +9,10 @@ using UrbanExplorerLogic;
 namespace UrbanExplorerWebAPIUnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest
     {
+        string connectionString = "Server=tcp:urbanexplorerserver.database.windows.net,1433;Initial Catalog=urbanexplorerdb;Persist Security Info=False;User ID=UrbanExplorer;Password=QRHHpe4y;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
         [TestMethod]
         public void LocationDTO_CheckIfDataGetsCorrectlyFetchedFromDataBase()
         {
@@ -38,6 +43,30 @@ namespace UrbanExplorerWebAPIUnitTest
             Assert.AreEqual(locationDTO.Information, locationDTO2.Information);
             Assert.AreEqual(locationDTO.Rating, locationDTO2.Rating);
             Assert.AreEqual(locationDTO.Checked, locationDTO2.Checked);
+        }
+
+
+        
+
+        [TestMethod]
+        public void TestDatabaseConnection()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    Assert.AreEqual(System.Data.ConnectionState.Open, connection.State);
+                }
+                catch (SqlException)
+                {
+                    Assert.Fail("Failed to establish a connection with the database.");
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }

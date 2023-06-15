@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace UrbanExplorerDAL
 {
-    internal static class DatabaseConnection
+    public class DatabaseConnection
     {
-        public static SqlConnection CreateConnection()
-        {
-            SqlConnection connection = new SqlConnection(GetConnectionString());
+        //public static SqlConnection CreateConnection()
+        //{
+        //    SqlConnection connection = new SqlConnection(GetConnectionString());
 
-            return connection;
-        }
+        //    return connection;
+        //}
 
-        public static string GetConnectionString()
-        {
-            return "Server=tcp:urbanexplorerserver.database.windows.net,1433;Initial Catalog=urbanexplorerdb;Persist Security Info=False;User ID=UrbanExplorer;Password=QRHHpe4y;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        }
+        //public static string GetConnectionString()
+        //{
+        //    return "Server=tcp:urbanexplorerserver.database.windows.net,1433;Initial Catalog=urbanexplorerdb;Persist Security Info=False;User ID=UrbanExplorer;Password=QRHHpe4y;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        //}
     }
 }

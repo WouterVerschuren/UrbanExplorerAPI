@@ -35,7 +35,9 @@ namespace UrbanExplorerDAL
 
         public void DeleteLocation(LocationDTO locationDTO)
         {
-            throw new NotImplementedException();
+            
+            _context.Locations.Remove(locationDTO);
+            _context.SaveChanges();
         }
 
         public List<LocationDTO> GetAllLocations()
@@ -50,7 +52,8 @@ namespace UrbanExplorerDAL
 
         public void UpdateLocation(LocationDTO locationDTO)
         {
-            throw new NotImplementedException();
+            _context.Locations.Find(locationDTO.Id);
+            _context.SaveChanges();
         }
     }
 }
